@@ -1,0 +1,20 @@
+0	text editors
+1	input redirection
+2	dd if=/dev/null of=./newfile
+3	fileio in any language
+4	touch
+5	cp
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
