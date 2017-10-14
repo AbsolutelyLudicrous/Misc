@@ -1,0 +1,129 @@
+Let's preface this with my bash_history from when I was dicking around with this
+
+eopkg up *
+xbacklight
+xbacklight --get
+xbacklight -get
+eopkg rm xbacklight
+eopkg it xbacklight
+xbacklight -get
+xrandr -q
+xrandr -q | grep 'connected'
+xrandr --output eDP-1 --brightness 0.5
+xrandr --output eDP-1 --brightness 0.1
+xrandr --output eDP-1 --brightness 1
+xrandr --output eDP-1 --brightness 0.9
+xrandr --output eDP-1 --brightness 0.1
+xrandr --output eDP-1 --brightness 01
+xrandr --output eDP-1 --brightness 02
+xrandr --output eDP-1 --brightness 01
+man xgamma
+man setpci
+man setpci | grep '-s'
+man setpci | grep '\-s'
+man qdbus
+man systemd-backlight
+eopkg info xdotool
+eopkg it xdotool
+man xdotool
+setpci -s 00:02,0 F4.B=0
+sudo setpci -s 00:02,0 F4.B=0
+lspci
+lspci | grep 'graphic'
+lspci | grep 'nvid'
+lspci | grep -ie 'nvid'
+sudo setpci -s 00:02.0 F4.B=0
+sudo setpci -s 00:02.0 F4.B=5
+sudo setpci -s 00:02.0 F4.B=30
+sudo setpci -s 00:02.0 F4.B=0
+sudo setpci -s 01:00.0 F4.B=0
+sudo setpci -s 01:00.0 F4.B=40
+sudo setpci -s 01:00.0 F4.B=0
+man sudo
+man su
+alias
+nvidia-settings 
+eopkg search bright
+eopkg search back
+eopkg info light
+man light
+light -G
+light
+man light
+light -S 0.5
+eopkg search light
+man mksh
+mksh
+cd /sys/class/backlight/;ls
+cd intel_backlight/;ls
+less max_brightness 
+less brightness 
+sudo echo 100 > brightness 
+sudo su
+su -c echo 100 > brightness 
+sudo su -c echo 100 > brightness 
+echo 'faster than light' | sudo -S su -c echo 100 > brightness 
+echo 'faster than light' | sudo -S su -c echo foo
+echo 'faster than light' | sudo -S su -c 'echo foo'
+ls
+echo 'faster than light' | sudo -S su -c 'echo 100 > brightness'
+echo 'faster than light' | sudo -S su -c 'echo 937 > brightness'
+#this hurts my head
+#basically, i'm piping my password to sudo su, which then runs the echo command
+#get back to this sometime
+#what is this?  A jerry-rigged replacement for xbacklight
+#the brightness file is located in /sys/class/backlight/intel_backlight/
+
+Thank Dog that I stuck those comments in there
+I was getting somewhere by the end
+
+So:
+	xdotool - simulate key presses
+	Not quite what I want, but okay
+
+	xrandr - adjusts brightness at the software, not the hardware level
+	It was a start
+
+	setpci - ???
+	Just flat out didn't work
+
+	xbacklight/light - adjusts backlight
+	Just what I want, right?  Nope, doesn't work in Kernel 4.9
+
+That leaves us with tht last command:
+	echo 'faster than light' | sudo -S su -c 'echo 937 > brightness'
+Let's dissect that.
+	echo 'faster than light' | sudo -S
+	Echo my password to sudo, no user input required
+
+	sudo -S su -c
+	Log in as root and perform the following command
+	
+	'echo 937 > brightness'
+	This is where it gets weird
+		echo [arg] > [file]
+		Self explanatory, overwrite the file with arg
+
+		937
+		The maximum brightness of an Asus K501UW laptop.  Ranges from 0-937.
+
+		brightness
+		/sys/class/backlight/intel_backlight/brightness - the file where the computer's brightness is stored
+
+	And by golly it worked!
+	Kinda.
+	I couldn't find a way to decrement the brightness, so:
+
+WHERE DO WE GO NOW?:
+	Instead of having brightness increment/decrement keys, just have presets.
+	I'm currently thinking that F5 should be half-brightness, F6 full brightness, and F7 is brightness value of 50.
+	Eventually, I should find a way to have F8(?) open a brightness slider dialog, similar to the one in Settings/Power/Brightness
+	But those are all Future Me's problems.
+	Screw you, Future Me!  You probably suck more than current me!
+
+Update!  There's been a breakthrough!  Screw you, Past Me!  You're an Asshole!
+https://www.reddit.com/r/SolusProject/comments/6hd7pc/xbacklight_not_working_no_way_to_adjust/?st=j43b0drc&sh=2860177a
+Just chmod the thing!
+
+Update!  Five minutes later!
+Nope, wasn't the problem.  Still resorting to hacky scripts.

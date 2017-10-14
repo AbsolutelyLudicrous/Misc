@@ -1,0 +1,2 @@
+~/.ICEauthority is a communications bus for X clients.
+The reason it's a binary file is because it stores authentication cookies.

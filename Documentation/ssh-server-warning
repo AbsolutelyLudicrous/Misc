@@ -1,0 +1,9 @@
+Solus doesn't allow remote ssh connections by default, Ikey thinks it's too risky.
+However, we can pull it off with the following command sequence:
+	sudo eopkg it openssh-server	#install the host
+	sudo systemctl enable sshd	#enable the daemon
+	sudo systemctl start sshd	#start the daemon
+
+Be wary, this is fairly risky.
+At the same time, 
+Malware is for chumps who don't run *nix

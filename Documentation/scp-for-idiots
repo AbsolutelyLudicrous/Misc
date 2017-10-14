@@ -1,0 +1,17 @@
+First, RTFM.
+Because the manual sucks, read this next.
+STEP ONE:
+	Choose your flags.  You probably don't need them, but if you do, choose them now.
+STEP 2WO:
+	Locate your file.
+STEP THR33:
+	Choose your destination server.
+STEP 4444:
+	Choose your destination location.
+
+Now, the format:
+	scp [source-location] [user]@[server]:[destination]
+source-location will usually look like /foo/bar/baz/qux/quux.corge
+user is your username at the server
+server is your remote box
+destination is where you want to jam the file after you've copied it

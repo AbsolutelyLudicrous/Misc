@@ -1,0 +1,36 @@
+Alright
+Alright
+Alright
+(Now ladies!)
+I can't quite configure sshd
+But, what I've learned so far is:
+	man sshd-config does what you would expect
+	the Fish server's sshd_config looks pretty similar to mine, but theirs works???
+	OSX does weaird things to sshd, it doesn't look similar to one on a *nix system
+	systemctl (action) sshd.service controls the sshd
+
+Here's root's bash_history after I gave up:
+	vim /etc/ssh/sshd_config 
+	cp /etc/ssh/sshd_config /home/masondanne/Documents/Documentation/sshd_config.default
+	vim /etc/ssh/sshd_config 
+	ls /etc/ssh/
+	vim /etc/ssh/sshd_config 
+	sudo systemctl restart sshd.service 
+	man sshd_config 
+	vim /etc/ssh/sshd_config 
+	sudo systemctl restart sshd.service 
+	vim /etc/ssh/sshd_config 
+	less .bashrc
+	w
+	vim /etc/ssh/sshd_config 
+	sudo systemctl restart sshd.service 
+	man sshd_config 
+	vim /etc/ssh/sshd_config 
+	sudo systemctl restart sshd.service 
+(I was logged in as root)
+IDK, try again later
+
+It is now later!
+See this reference image:
+	https://cdn-images-1.medium.com/max/800/1*iBGRBDPDef6c3sBGo-K8Fw.png
+Try using that, future me!

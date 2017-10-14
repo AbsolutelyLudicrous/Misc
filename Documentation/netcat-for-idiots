@@ -1,0 +1,10 @@
+To start the NetCat listening server, type
+	sudo nc -l [ip] -p [port]
+	ip will usually be localhost, port will usually be 80
+
+Then, to send something, type
+	echo [message] | nc [ip] [port]
+
+It's really cool!
+This was found on:
+https://www.reddit.com/r/SolusProject/comments/6eh3vu/cant_get_netcat_to_work_with_sudo_nc_l_80/?st=j3elzt7c&sh=52d1cd43

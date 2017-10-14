@@ -4,7 +4,7 @@
 3	fileio in any language
 4	touch
 5	cp
-6
+6	empty redirect ( ` > foofile ` )
 7
 8
 9
