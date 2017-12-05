@@ -1,0 +1,3 @@
+Create a gzipped tarball with ``tar czf name-of-archive.tar.gz file0 file1 file2 file3``
+List the contents of a tarball with ``tar tvf name-of-archive.tar.gz``
+Extract a tarball with ``tar xf name-of-archive.tar.gz``
