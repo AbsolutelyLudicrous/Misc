@@ -137,7 +137,7 @@ Tails offers [the following features](https://tails.boum.org/about/index.en.html
  + All internet traffic goes through Tor.
    Yeah, Tor; you know, that super scary thing all the 1337 h4x0r drug dealers use?
    The Tor network is an encrypted series of computers which your traffic bounces through before getting to the actual internet.
-   This has the effect of anonymising your your location and concealing which websites you're visiting.
+   This has the effect of anonymising your location and concealing which websites you're visiting.
    A bit like a VPN, really.
 
  + The stick is encrypted.
@@ -151,3 +151,42 @@ Sometimes, the inherent security of a live stick is enough.
 Your enemy isn't tech savvy enough to intercept your internet traffic or can't quite understand this whole computering thing.
 
 Read: if you're trying to protect yourself from your parents.
+
+In this situation, any old distro will do.
+
+> Why not use Tails?
+
+Tails kinda sucks for day-to-day usage.
+Routing traffic through Tor is slow, plus power users may find it bloated at first.
+Tails is very much designed for maximum phyiscal security, attempting to use it as a daily distro is suboptimal.
+
+I recommend using [Solus Mate Edition](https://distrowatch.com/table.php?distribution=solus), but ultimately any distro will do.
+
+Solus offers the following:
+
+ + It offers encryption on install.
+   You can encrypt your system on install.
+
+ + It's rolling-release.
+   Most operating systems are point-releases.
+   You get a big update every few months.
+   E.G., Windows 7, Windows 8, Windows 10 and MacOS X 10.6, MacOS X 10.7, ..., MacOS X 10.13.
+   Solus is rolling.
+   You do not have traditional major releases, all software is updated constantly.
+   You will have access to the latest stable versions of the software you use.
+   This generally makes for fewer security holes and bugs being patched faster.
+
+ + It's relatively lightweight.
+   Compared to some other "beginner" distros (\*cough\* \*cough\* Ubuntu!), Solus is downright slim.
+   A fresh Solus install will run on under 10Gb of storage.
+   A fresh Ubuntu install takes 25Gb.
+
+ + It's idiot-resistant.
+   Solus is easy to use, it features graphical tools for everything, it has a simple installation procedure, it can be used without ever touching a terminal.
+   That being said, learners will enjoy how simple it is to "git gud" on it.
+
+#### If you need just a basic live distro, with few additional security features, use Solus.
+
+**Crazy software security and learning how to use a UNIX system:**
+
+//TODO OpenBSD shilling
