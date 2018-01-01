@@ -86,6 +86,15 @@ Instead of installing a Linux on your computer's internal storage, we'll be inst
 A live USB is just that, a USB stick you've put a fully functioning GNU/Linux software distribution on.
 I'll also use the terms "live Linux", "live BSD", "stick", and "live stick" to refer to a live USB.
 
+Linux distros aren't your only choice, another common family of operating systems is called "BSD".
+BSD stands for Berkeley Software Distribution.
+The BSD family traces its lineage all the way back to the version of original AT&T UNIX licensed to UC Berkeley.
+Today, BSD is commonly used for computer servers and hobbyists;
+nerds, basically.
+
+Power users who aren't afraid of getting their hands dirty with the command line might consider using a BSD instead of a Linux.
+Anybody who wants a pain-free computer experience should just use a Linux.
+
 ---
 
 ## The Inherent Security of Live Linux USBs
@@ -99,8 +108,6 @@ Software-wise, Linux is hella secure.
 A strong UNIX permissions ensures that viruses can't damage critical system files.
 A low use rate means that, in total, only 39 viruses targetting Linux have ever been designed.
 Different system architectures between distros mean that, what works on Ubuntu Linux probably will fail on Arch Linux; and vice-versa.
-
-(I do cover the stronger security of OpenBSD later, don't get your neckbeard in a tangle.)
 
 Hardware is tougher to secure.
 Simply put, ***Phyiscal Access Is Root(Administrator) Access***.
@@ -187,6 +194,41 @@ Solus offers the following:
 
 #### If you need just a basic live distro, with few additional security features, use Solus.
 
-**Crazy software security and learning how to use a UNIX system:**
+---
 
-//TODO OpenBSD shilling
+## Installing ~~gentoo~~ to USB
+
+Installing Linux on a USB is pretty simple.
+
+### Here's what you'll need:
+
+0. One *good* USB stick.
+   This stick will be our Live Linux USB, this will contain the actual live system.
+   "Good" means that the stick has a high read/write speed.
+   A low read/write speed will cause your system to lag.
+   When choosing a stick, check if it's USB 3 or USB 2.
+   USB 3 is the most recent USB standard, and offers read/write speeds of over 150Mb/s.
+   USB 2 is capped at 44Mb/s.
+   The author highly recommends using [this](https://www.amazon.com/SanDisk-Ultra-SDCZ43-128G-GAM46-Newest-Version/dp/B01BGTG41W/) stick in particular,
+   but any stick with more than 16Gb of storage will work.
+
+1. Another USB stick.
+   This stick can be garbage, it just needs more than 8Gb of storage.
+   This stick will be used for the installer, it does not need to have good read/write speeds.
+
+2. A computer.
+   The computer must have two free USB ports and an unlocked BIOS.
+   If the computer requires a password to access the BIOS, find a different computer.
+   If you do not own a computer of your own, check your local library.
+
+3. A USB Image writer.
+   [Etcher](https://etcher.io/) provides a simple GUI for burning images to USB sticks.
+   More advanced users running MacOS X, Linux, or BSD may want to look into using the `dd` command-line utility.
+
+### Now you need to obtain the installer image
+
+An installer image, often just called an "ISO" ("Eye-soh"), is a stripped down version of an operating system desgined to install a fully-functioning version of itself.
+ISOs are so named because of their file extension, `.iso`.
+
+Linux installers are usually named `nameOfDistro-versionNumber-architecture.iso`.
+BSD installers' names vary, and usually end with `.img` or `.img.gz`.
