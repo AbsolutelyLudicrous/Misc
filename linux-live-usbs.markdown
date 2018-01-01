@@ -299,11 +299,11 @@ To use the installer, you'll need to boot to it.
 2. Boot to either your computer's "One-time boot" screen or to your BIOS/(U)EFI menu.
    This is usually done by holding down a certain key on your keyboard while booting.
    You can check this by Googling for your laptop, or checking your motherboard's specification.
-   E.G.: "asus k501 bios key" or "asrock bios key".
+   E.G.: "asus k501 bios key" or "asrock mobo bios key".
 
 *Stock Apple Macs don't have a BIOS, they have a boot screen which allows you to select a drive to boot to.
 This can be accessed by holding down the "Alt" key when booting.
-From the boot menu, you boot to your main MacOS X install, another operating system you may have installed, a "Recovery Volume" - a stripped down MacOS X designed for system recovery, and the USB stick you have plugged in.
+From the boot menu, you can boot to your main MacOS X install, another operating system you may have installed, a "Recovery Volume" - a stripped down MacOS X designed for system recovery, and the USB stick you have plugged in.
 Use the arrow keys or the mouse to select and boot to the USB stick.*
 
 3. From the BIOS or boot menu, boot to your USB stick.
@@ -313,7 +313,7 @@ Use the arrow keys or the mouse to select and boot to the USB stick.*
    All major distros should have tutorials available online, if needed.
 
 If extra help is needed, the author can provide distro-specific instructions.
-Contact them through Telegram as @mdanne
+Contact them through Telegram as [@mdanne](https://t.me/mdanne).
 
 Congratulations!
 You should now have a bootable Live Linux USB!
