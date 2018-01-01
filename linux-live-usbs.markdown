@@ -228,7 +228,17 @@ Installing Linux on a USB is pretty simple.
 ### Now you need to obtain the installer image
 
 An installer image, often just called an "ISO" ("Eye-soh"), is a stripped down version of an operating system desgined to install a fully-functioning version of itself.
-ISOs are so named because of their file extension, `.iso`.
+ISOs are so named because of their file extension, `.iso`, which is derive from the name of the ISO-9660 file system commonly used in ISOs.
 
 Linux installers are usually named `nameOfDistro-versionNumber-architecture.iso`.
 BSD installers' names vary, and usually end with `.img` or `.img.gz`.
+
+To obtain the ISO, you'll usually need to go to your chosen distro's "Downloads" page.
+Solus provides theirs [here](https://solus-project.com/download/), Tails provides theirs [here](https://tails.boum.org/install/download/index.en.html).
+
+Other operating systems should have a big ol' "**Download**" button on their homepage.
+
+Many ISOs are distributed as torrents.
+If possible, you should use your torrent client to obtain the ISO.
+Not only is torrenting more secure than a direct download, it also takes a load off of your distro's file servers.
+
