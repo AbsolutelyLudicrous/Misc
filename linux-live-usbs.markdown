@@ -200,6 +200,9 @@ Solus offers the following:
 
 Installing Linux on a USB is pretty simple.
 
+*As an aside, Tails provides a guide tailored to Tails.
+If you chose to use Tails, you can follow it [here](https://tails.boum.org/install/index.en.html).*
+
 ### Here's what you'll need:
 
 0. One *good* USB stick.
@@ -238,7 +241,84 @@ Solus provides theirs [here](https://solus-project.com/download/), Tails provide
 
 Other operating systems should have a big ol' "**Download**" button on their homepage.
 
-Many ISOs are distributed as torrents.
+*Many ISOs are distributed as torrents.
 If possible, you should use your torrent client to obtain the ISO.
-Not only is torrenting more secure than a direct download, it also takes a load off of your distro's file servers.
+Not only is torrenting more secure than a direct download, it also takes a load off of your distro's file servers.*
 
+**Checklist:**
+
+At this point, you should have the following:
+
+ + Two USB sticks
+
+ + Etcher, or other image burning software
+
+ + A file ending with `.iso` or `.img`.
+
+Good?
+
+### Burning the installer image
+
+ISOs are useless on your computer, you have to "burn" them to a USB stick to actually use them.
+To do that, perform the following:
+
+0. Plug in your crappy USB stick, the one you're using for the installer.
+
+1. Fire up Etcher
+
+2. Click "Select image"
+
+3. Navigate to the folder you downloaded the ISO to, usually `Downloads`
+
+4. Double-click the ISO.
+   Etcher may warn you that the image is invalid.
+   If this is the case, choose a different distro.
+
+5. Etcher will either autodetect the USB stick you want to burn to, if you only have one stick plugged in, or Etcher will offer a selection of sticks to burn to.
+   If asked, choose your crappy USB stick as the destination.
+
+6. Flash!
+   You may be asked to enter your password, this is because interacting with external storage mediums is generally an action which requires root privelages.
+
+7. Wait for the image to finish burning, Etcher will give you a notification when this happens.
+
+8. Unplug the USB stick.
+
+Congratulations, you now have an installer USB!
+
+We can now move on to the actual installation.
+
+### Installing the Live System
+
+To use the installer, you'll need to boot to it.
+
+0. Plug in both your installer USB stick and your "good" USB stick.
+
+1. Close any applications you have open, save all your work, etc., because you need to reboot your computer to access the installer.
+
+2. Boot to either your computer's "One-time boot" screen or to your BIOS/(U)EFI menu.
+   This is usually done by holding down a certain key on your keyboard while booting.
+   You can check this by Googling for your laptop, or checking your motherboard's specification.
+   E.G.: "asus k501 bios key" or "asrock bios key".
+
+*Stock Apple Macs don't have a BIOS, they have a boot screen which allows you to select a drive to boot to.
+This can be accessed by holding down the "Alt" key when booting.
+From the boot menu, you boot to your main MacOS X install, another operating system you may have installed, a "Recovery Volume" - a stripped down MacOS X designed for system recovery, and the USB stick you have plugged in.
+Use the arrow keys or the mouse to select and boot to the USB stick.*
+
+3. From the BIOS or boot menu, boot to your USB stick.
+
+4. Perform the install normally, except instead of installing Linux to your computer's internal storage, install to your "good" USB.
+   Installation instructions vary between distro, so I won't list them here.
+   All major distros should have tutorials available online, if needed.
+
+If extra help is needed, the author can provide distro-specific instructions.
+Contact them through Telegram as @mdanne
+
+Congratulations!
+You should now have a bootable Live Linux USB!
+
+To load the live Linux, repeat the steps you used to load the installer.
+Once you get to the boot menu, boot to your "good" USB.
+
+From there, enjoy your secure Linux operating system!
