@@ -1,9 +1,9 @@
-*(Author note:
+*(Author note:*
 
-Windows is shit.
-Modern "user-friendly" Linuxes, such as Solus or Antergos, are heckin' easy to use.
+*Windows is shit.*
+*Modern "user-friendly" Linuxes, such as Solus or Antergos, are heckin' easy to use.*
 
-You should use those, instead of an operating system which spies on you and takes control of ****your**** computer.)*
+*You should use those, instead of an operating system which spies on you and takes control of ****your**** computer.)*
 
 ---
 
@@ -76,11 +76,19 @@ If you want to super-safely install a previous version of Windows, this is the g
 We'll need to run a *lot* of commands as root.
 To ensure that we don't have go typing `sudo` a whole bunch or risk having `sudo` time-out on us, just log in as root in most new terminals.
 
+---
+
 **0:**
 
 To boot the live Linux, you'll need access to your computer's BIOS.
 The key to access BIOS is commonly displayed on bootup.
 If not, check Google for your motherboard's BIOS key.
+
+From the BIOS, you should be able to select a boot medium.
+
+The Live Linux should show up with the manufacturer's designation for your USB stick.
+
+---
 
 **1:**
 
@@ -120,6 +128,7 @@ Our specific `dd` will look like the following:
 
     dd if=/dev/sdX of=/mnt/ddtarget/hard-disk-#.img
     #where sdX is the device of our computer's disk, and hard-disk-#.img is the backup image file
+    #make sure to replace sdX and disk-# with the appropriate letter and number!
 
 **Be warned that this is going to take a *****long***** time!**
 
@@ -143,6 +152,22 @@ To increase the amount of resources available to `dd`, run the following:
 
 This gives the `dd` the second-highest priority available, second only to critical operating-system processes.
 
+**Do not** give the `dd` a priority of -20.
+-20 should *only* be used for OS-critical processes, such as the kernel integrity checker, or the kernel multithreading daemon.
+Increasing the nice-level to -20 has a miniscule benefit, and can cause major harm to the Live Linux.
+Most processes run at a nice-level of 0 or 19, the ones that don't are *really fucking important*.
+
+---
+
 **2:**
 
+Imaging the system is great and all, but is better suited to backups than fiddling around with mounting disk images.
+To alleviate this problem, we're going to use the UNIX `cp` (CoPy) command to make an easily-accessible copy of our disks.
 
+This is different from `dd` in that our `dd` takes a snapshot of every individual bit on the disks, whereas `cp` copies files, including the contents of links on UNIX file systems.
+
+**CAUTION:**
+
+If your Windows install contains a set of recursive links, `tar` the filesystems first.
+Windows makes it hard for you to create recursive links, only delve into the witchcraft that is `tar` if you're aware of any.
+If you aren't sure, continue with these steps; we'll check for discrepencies in filesystem size a bit later.
