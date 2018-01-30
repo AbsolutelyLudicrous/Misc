@@ -62,12 +62,12 @@ sudo echo 100 > brightness
 sudo su
 su -c echo 100 > brightness 
 sudo su -c echo 100 > brightness 
-echo 'faster than light' | sudo -S su -c echo 100 > brightness 
-echo 'faster than light' | sudo -S su -c echo foo
-echo 'faster than light' | sudo -S su -c 'echo foo'
+echo 'p' | sudo -S su -c echo 100 > brightness 
+echo 'p' | sudo -S su -c echo foo
+echo 'p' | sudo -S su -c 'echo foo'
 ls
-echo 'faster than light' | sudo -S su -c 'echo 100 > brightness'
-echo 'faster than light' | sudo -S su -c 'echo 937 > brightness'
+echo 'p' | sudo -S su -c 'echo 100 > brightness'
+echo 'p' | sudo -S su -c 'echo 937 > brightness'
 #this hurts my head
 #basically, i'm piping my password to sudo su, which then runs the echo command
 #get back to this sometime
@@ -91,9 +91,9 @@ So:
 	Just what I want, right?  Nope, doesn't work in Kernel 4.9
 
 That leaves us with tht last command:
-	echo 'faster than light' | sudo -S su -c 'echo 937 > brightness'
+	echo 'p' | sudo -S su -c 'echo 937 > brightness'
 Let's dissect that.
-	echo 'faster than light' | sudo -S
+	echo 'p' | sudo -S
 	Echo my password to sudo, no user input required
 
 	sudo -S su -c
